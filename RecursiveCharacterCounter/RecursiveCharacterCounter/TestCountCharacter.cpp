@@ -23,15 +23,43 @@ int main()
 	int result;
 
 	SignatureBlock::printHeader(); // Print Signature Block
-	CountCharacter count;
 
-	cout << "Enter a string: ";
-	getline( cin, stringIn );
+		try
+		{
+			cout << "\nEnter a string: ";
+			getline( cin, stringIn );
 
-	cout << "Enter a character: ";
-	cin >> charIn;
+			cout << "\nEnter a character: ";
+			charIn = getchar();
+			cin.ignore(1000, '\n');
+		}
+		catch( CountCharacterException& inputException)
+		{
+			cout << inputException.what();
+			cout << "A search string, and a character to search for, must be entered.\n"
+				 << "You entered String: \"" << inputException.getStringIn() << "\" and Character: \"" << inputException.getCharIn() << "\".\n" << endl;
+		}
 
-	result = count.count( stringIn, charIn );
+	//do
+	//{
+	//	try
+	//	{
+	//		cout << "\nEnter a string: ";
+	//		getline( cin, stringIn );
+
+	//		cout << "\nEnter a character: ";
+	//		charIn = getchar();
+	//		cin.ignore(1000, '\n');
+	//	}
+	//	catch( CountCharacterException& inputException)
+	//	{
+	//		cout << inputException.what();
+	//		cout << "A search string, and a character to search for, must be entered.\n"
+	//			 << "You entered String: \"" << inputException.getStringIn() << "\" and Character: \"" << inputException.getCharIn() << "\".\n" << endl;
+	//	}
+	//} while( stringIn.empty() || charIn == '\0' || charIn == '\n' );
+
+	result = CountCharacter::count( stringIn, charIn );
 
 	if( result > 0 )
 		cout << "\nCharacter \"" << charIn << "\" was found (" << result << ") times.\n" << endl;

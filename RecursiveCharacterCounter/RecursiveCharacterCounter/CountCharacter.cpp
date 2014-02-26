@@ -1,14 +1,15 @@
 #include "CountCharacter.h"
 
-CountCharacter::CountCharacter()
-{
-	frequency = 0;
-	found = 0;
-}
+	int CountCharacter::frequency = 0;
+	int CountCharacter::found = 0;
+	bool CountCharacter::valid = false;
 
 int CountCharacter::count(const string& s, char a)
 {
-	count( s, a, 0 );
+	if( !validateInput( s, a ) )
+		throw CountCharacterException( s, a );
+	else
+		count( s, a, 0 );
 	return frequency;
 } // end recursive count function
 
@@ -26,3 +27,13 @@ int CountCharacter::count(const string& s, char a, int pos)
 		return frequency;
 	}
 } // end count helper function
+
+bool CountCharacter::validateInput(const string& s, char a)
+{
+	if( (!s.empty()) && (a != '\0') && (a != '\n'))
+	{
+		valid = true;
+	}
+
+	return valid;
+} // end validateInput() method

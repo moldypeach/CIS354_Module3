@@ -21,6 +21,9 @@
     <ClInclude Include="SignatureBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CountCharacterException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestCountCharacter.cpp">
