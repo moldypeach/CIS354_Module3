@@ -1,3 +1,15 @@
+/* Filename:        CountCharacterException.h
+ * Last Modified:   26 February 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS354 - Algorithms and Data Structures
+ * 
+ * CountCharacterException.h is a custom inline exception class for CountCharacter.h
+ * that extends the standard invalid_argument class to make use of the what()
+ * function in the exception class. It receives inputs of the user-entered
+ * string and search character, as well as functions to return said fields; and throws
+ * an error message as defined in the base classe's constructor (line 23)
+ */
 #ifndef COUNTCHARACTEREXCEPTION_H
 #define COUNTCHARACTEREXCEPTION_H
 #include <stdexcept>
@@ -8,7 +20,7 @@ using namespace std;
 class CountCharacterException : public invalid_argument
 {
 public:
-	CountCharacterException( const string& stringIn, char charIn) : invalid_argument("Invalid Input: ")
+	CountCharacterException( const string& stringIn, char charIn) : invalid_argument("\nInvalid Input: ")
 	{
 		this->stringIn = stringIn;
 		this->charIn = charIn;

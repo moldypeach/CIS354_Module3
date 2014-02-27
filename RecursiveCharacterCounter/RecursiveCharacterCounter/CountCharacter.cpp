@@ -1,3 +1,11 @@
+/* Filename:        CountCharacter.cpp
+ * Last Modified:   26 February 2014
+ * Author:          Todd Parker
+ * Email:           todd.i.parker@maine.edu
+ * Course:          CIS354 - Algorithms and Data Structures
+ * 
+ * CountCharacter.cpp is the implementation of CountCharacter.h
+ */
 #include "CountCharacter.h"
 
 	int CountCharacter::frequency = 0;
